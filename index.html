@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Color Theory Collective • Mixer</title>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<header>
+  <div class="container">
+    <div class="brand">CTC • Color Theory Collective</div>
+    <nav class="nav">
+      <a href="#mixer">Mixer</a>
+      <a href="#coach">Coach</a>
+      <a href="#ai">AI</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section id="mixer" class="card">
+    <h1>Mixing Lab</h1>
+    <div class="row">
+      <label>Brand</label><select id="brand"></select>
+      <label>Line / Series</label><select id="line"></select>
+      <label>Level</label><select id="level"></select>
+      <label>Tone / Family</label><select id="tone"></select>
+      <label>Developer</label><select id="developer"></select>
+    </div>
+    <div class="row">
+      <label>Shade A</label><input id="shadeA" type="color" value="#9b72ff"/>
+      <label>Shade B</label><input id="shadeB" type="color" value="#e5d8ff"/>
+      <label>Ratio A</label><input id="ratioA" type="number" min="0" value="1"/>
+      <label>Ratio B</label><input id="ratioB" type="number" min="0" value="1"/>
+      <button id="dlpng">Download Swatch (PNG)</button>
+    </div>
+    <div id="swatch" class="preview" aria-label="Swatch Preview"></div>
+    <div class="row" style="margin-top:10px">
+      <input id="share" class="share" style="flex:1" readonly/>
+      <button id="copy">Copy Share URL</button>
+    </div>
+    <div class="small">Approximation for training. Always follow manufacturer instructions.</div>
+  </section>
+
+  <section id="coach" class="card">
+    <h2>Neutralization Coach</h2>
+    <div>Yellow ↔ Violet · Orange ↔ Blue · Red ↔ Green · Yellow‑Orange ↔ Blue + Violet · Red‑Orange ↔ Blue‑Green</div>
+    <table>
+      <thead><tr><th>Level</th><th>Underlying Pigment</th><th>Neutralize With</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>Blue</td><td>Orange</td></tr>
+        <tr><td>2</td><td>Blue‑Violet</td><td>Yellow‑Orange</td></tr>
+        <tr><td>3</td><td>Violet</td><td>Yellow</td></tr>
+        <tr><td>4</td><td>Red‑Violet</td><td>Yellow‑Green</td></tr>
+        <tr><td>5</td><td>Red</td><td>Green</td></tr>
+        <tr><td>6</td><td>Red‑Orange</td><td>Blue‑Green</td></tr>
+        <tr><td>7</td><td>Orange</td><td>Blue</td></tr>
+        <tr><td>8</td><td>Yellow‑Orange</td><td>Blue + Violet</td></tr>
+        <tr><td>9</td><td>Yellow</td><td>Violet</td></tr>
+        <tr><td>10</td><td>Pale Yellow</td><td>Violet</td></tr>
+        <tr><td>11</td><td>Pale Yellow/Neutral</td><td>Violet</td></tr>
+        <tr><td>12</td><td>Very Pale/Neutral</td><td>Violet</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="ai" class="card">
+    <h2>AI Analyzer (Visitor‑key)</h2>
+    <div class="row">
+      <label>Your OpenAI API Key</label>
+      <input id="key" type="password" placeholder="sk-... (stored only in this browser)"/>
+    </div>
+    <div class="row">
+      <input id="imgurl" placeholder="Paste image URL to analyze"/>
+      <button id="analyze">Analyze</button>
+    </div>
+    <pre id="aitext" class="pre"></pre>
+    <div class="small">Billing stays on the visitor’s key. Serverless proxy: <code>/.netlify/functions/vision</code>.</div>
+  </section>
+</main>
+
+<footer>© Color Theory Collective</footer>
+<script src="script.js"></script>
+</body>
+</html>
