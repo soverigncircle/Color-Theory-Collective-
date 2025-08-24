@@ -1,0 +1,3 @@
+index.html   ← main page (must be named exactly this)
+style.css    ← neutral + purple gradient theme
+script.js    ← Mixing Lab logic, swatch preview, PNG export, share URL
